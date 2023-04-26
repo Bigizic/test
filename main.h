@@ -78,12 +78,20 @@ char *_strdup(const char *s);
 char *_strncat(char *dest, const char *src, size_t n);
 
 
+/* system helpers */
+
+
+
 /* error messages */
 char *env_error(char **args);
 char *error_1(char **args);
 char *error_2(char **args);
 char *syntax_error(char **args);
 char *cd_error(char **args);
+int error_handler(char **args, int err);
+char *error_100(char **args);
+char *error_101(char **args);
+
 
 /* handles free */
 void environ_free(void);

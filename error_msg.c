@@ -115,3 +115,57 @@ char *error_101(char **args)
 	free(list);
 	return (error);
 }
+
+
+/**
+* _itoa - converts an integer to a string
+*
+* @num: int type
+*
+* Return: 0
+*/
+char *_itoa(int num)
+{
+	char *buffer;
+	int len;
+	unsigned int num1, num2;
+	int l = 1;
+
+	if (num < 0)
+	{
+		l++;
+		num2 = num * -1;
+	}
+	else
+		num2 = num;
+	while (num2 > 0)
+	{
+		l++;
+		num2 /= 10;
+	}
+	len = l;
+	buffer = malloc(sizeof(char) * (len + 1));
+	if (!buffer)
+		return (NULL);
+
+	buffer[len] = '\0';
+
+	if (num < 0)
+	{
+		num1 = num * -1;
+		buffer[0] = '-';
+	}
+	else
+	{
+		num1 = num;
+	}
+
+	len--;
+	do {
+		buffer[len] = (num1 % 10) + '0';
+		num1 /= 10;
+		len--;
+	} while (num1 > 0);
+
+	return (buffer);
+}
