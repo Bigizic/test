@@ -79,7 +79,15 @@ char *_strncat(char *dest, const char *src, size_t n);
 
 
 /* system helpers */
+char *_itoa(int num);
 
+
+/* args handlers */
+char *_args_1(char *line, int *rel);
+int _args_2(char **args, char **fptr, int *rel);
+int _args_3(char **args, char **fptr, int *rel);
+int _args_4(int *rel);
+int _args_5(char **args);
 
 
 /* error messages */
