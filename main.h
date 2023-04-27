@@ -90,6 +90,12 @@ int _args_4(int *rel);
 int _args_5(char **args);
 
 
+/* more args handlers */
+void _replacement(char **line, int *rel);
+char *get_pid(void);
+char *get_env_value(char *start, int len);
+
+
 /* error messages */
 char *env_error(char **args);
 char *error_1(char **args);
@@ -106,7 +112,7 @@ void environ_free(void);
 void as_free(char **as, char **fptr);
 void alias_list_free(alias_t *head);
 void free_list(list_t *head);
-
+void args_free(char **args, char **fptr);
 
 /* location */
 char _location(char *cmd);

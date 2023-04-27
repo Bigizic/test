@@ -77,3 +77,21 @@ void free_list(list_t *head)
 		head = next;
 	}
 }
+
+
+/**
+* args_free - frees args
+*
+* @args: char type
+*
+* @fptr: double pointer to the beginning of args
+*/
+void args_free(char **args, char **fptr)
+{
+	size_t i;
+
+	for (i = 0; args[i] || args[i + 1]; i++)
+		free(args[i]);
+
+	free(fptr);
+}
