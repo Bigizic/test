@@ -27,7 +27,7 @@ char *_args_1(char *line, int *rel)
 		history++;
 		if (isatty(STDIN_FILENO))
 			write(STDOUT_FILENO, prompt, 2);
-		return (get_args(line, rel));
+		return (_args_1(line, rel));
 	}
 
 	line[read - 1] = '\0';
