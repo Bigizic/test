@@ -31,7 +31,7 @@ char *_args_1(char *line, int *rel)
 	}
 
 	line[read - 1] = '\0';
-	variable_replacement(&line, rel);
+	_replacement(&line, rel);
 	handle_line(&line, read_line);
 
 	return (line);
@@ -158,7 +158,7 @@ int _args_4(int *rel)
 	if (_args_5(args) != 0)
 	{
 		*rel = 2;
-		args_free(args, args);
+		as_free(args, args);
 		return (*rel);
 	}
 	fptr = args;
@@ -178,7 +178,7 @@ int _args_4(int *rel)
 		rex = _args_2(args, fptr, rel);
 
 	free(fptr);
-	return (ret);
+	return (rex);
 }
 
 /**

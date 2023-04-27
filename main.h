@@ -112,7 +112,6 @@ void environ_free(void);
 void as_free(char **as, char **fptr);
 void alias_list_free(alias_t *head);
 void free_list(list_t *head);
-void args_free(char **args, char **fptr);
 
 /* location */
 char _location(char *cmd);
